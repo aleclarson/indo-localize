@@ -1,1 +1,14 @@
-{"dependencies":{"@cush/exec":"^1.8.0","kleur":"^4.1.5","recrawl-sync":"^2.2.3","saxon":"^0.2.11","sucrase":"^3.29.0"},"bin":"main.js"}
+{
+  "name": "indo-localize",
+  "bin": {
+    "indo-localize": "main.js"
+  },
+  "dependencies": {
+    "@cush/exec": "^1.8.0",
+    "kleur": "^4.1.5",
+    "recrawl-sync": "^2.2.3",
+    "saxon": "^0.2.11",
+    "slurm": "^0.5.10",
+    "sucrase": "^3.29.0"
+  }
+}
