@@ -2,7 +2,7 @@ import fs from 'fs'
 import { join } from 'path'
 import exec from '@cush/exec'
 import { blue, green, red, yellow } from 'kleur/colors'
-import { copy, follow, isDir, isLink, remove } from 'saxon/sync'
+import { copy, follow, isDir, mkdir, isLink, remove, list } from 'saxon/sync'
 import slurm from 'slurm'
 
 const argv = slurm('*')
@@ -94,7 +94,12 @@ function localizeVendor(root: string) {
         // Convert the directory symlink into a copy of the real
         // directory.
         remove(unresolvedDir)
-        copy(resolvedDir, unresolvedDir)
+        mkdir(unresolvedDir)
+        for (const file of list(resolvedDir)) {
+          if (file !== '.git' && file !== '.gitignore') {
+            copy(join(resolvedDir, file), join(unresolvedDir, file))
+          }
+        }
       } else {
         resolvedDirs.add(join(vendorRoot, dir))
       }
