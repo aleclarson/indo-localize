@@ -3,6 +3,7 @@
   "bin": {
     "indo-localize": "main.js"
   },
+  "prettier": "@alloc/prettier-config",
   "dependencies": {
     "@cush/exec": "^1.8.0",
     "kleur": "^4.1.5",
@@ -10,5 +11,9 @@
     "saxon": "^0.2.11",
     "slurm": "^0.5.10",
     "sucrase": "^3.29.0"
+  },
+  "devDependencies": {
+    "@alloc/prettier-config": "^1.0.0",
+    "prettier": "^3.2.5"
   }
 }
