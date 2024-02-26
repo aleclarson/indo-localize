@@ -11,7 +11,7 @@ if (isRevert) {
   argv.shift()
 }
 
-localizeVendor(argv[0])
+localizeVendor(argv[0] || process.cwd())
 
 function localizeVendor(root: string) {
   if (!isRevert && exec.sync('which ni', { noThrow: true }).length == 0) {
